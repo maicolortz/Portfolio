@@ -2,27 +2,40 @@ import image from "../src/images/per.png";
 import im2 from "../src/images/plo2.jpg";
 import im1 from "../src/images/plo1.png";
 import im3 from "../src/images/plo3.png";
-import reactimage from "../src/images/react.png"
-import postgres from "../src/images/postgres.png"
-import redux from "../src/images/redux.png"
-import tailwind from "../src/images/tailwind.png"
-import js from "../src/images/javascript.png"
-import html from "../src/images/html.png"
-import node from "../src/images/node.png"
-import express from "../src/images/express-js.png"
-import css from "../src/images/css.png"
+import reactimage from "../src/images/react.png";
+import postgres from "../src/images/postgres.png";
+import redux from "../src/images/redux.png";
+import tailwind from "../src/images/tailwind.png";
+import js from "../src/images/javascript.png";
+import html from "../src/images/html.png";
+import node from "../src/images/node.png";
+import express from "../src/images/express-js.png";
+import pf1 from "../src/images/sectionProjects/portafolio_pf_1.png";
+import pf2 from "../src/images/sectionProjects/portafolio_pf_2.png";
+import pf3 from "../src/images/sectionProjects/portafolio_pf_3.png";
+import pi1 from "../src/images/sectionProjects/portafolio_pi_1.png";
+import pi2 from "../src/images/sectionProjects/portafolio_pi_2.png";
+import pi3 from "../src/images/sectionProjects/portafolio_pi_3.png";
+import css from "../src/images/css.png";
 import "./App.css";
 import { HashLink } from "react-router-hash-link";
 import { Route, Router } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function Portafolio() {
   const estilos = {
     h1: " text-3xl  font-bold text-slate-200 flex h-full flex-col transition transform  text-center border-y-4 border-sky-500  mx-8 rounded-2xl hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none  cursor-pointer py-4  tracking-widest tracking-wider ",
     h1NE: "text-3xl  font-bold text-slate-200 flex h-full flex-col transition transform  text-center border-y-4 border-sky-500  mx-8 rounded-2xl py-4 my-20",
+    h1_down:"text-3xl  font-bold text-slate-200 flex h-full flex-col transition transform  text-center border-x-4 border-sky-500  mx-8 rounded-2xl py-4 mt-32 my-20",
+    linkGrande: "text-3xl  font-extrabold text-slate-400  ",
 
     h8: "text-7xl  font-extrabold text-slate-200 flex h-full flex-col ",
     p: "text-gray-300 text-xl",
+    p_2:"text-slate-300 mb-3",
     containerli: "mt-0.5 ml-4 mb-6 ",
     pli: "text-slate-300 text-md",
+    tittle: "text-slate-300 font-bold text-2xl mb-1.5",
+    subtittle: "text-slate-400 font-bold text-xl mb-1.5",
   };
 
   return (
@@ -36,17 +49,15 @@ export default function Portafolio() {
             <HashLink to="#about">
               <h1 className={estilos.h1}>About</h1>
             </HashLink>
-            
-          </div>
-          <div>
-
-            <h1 className={estilos.h1}>Projects</h1>
-            
           </div>
           <div>
             <HashLink to="#skills">
-
-            <h1 className={estilos.h1}>Skills</h1>
+              <h1 className={estilos.h1}>Skills</h1>
+            </HashLink>
+          </div>
+          <div>
+            <HashLink to="#projects">
+              <h1 className={estilos.h1}>Projects</h1>
             </HashLink>
           </div>
           <div>
@@ -90,7 +101,7 @@ export default function Portafolio() {
             <br />
             <br />
           </p>
-          <h3 className={estilos.h1NE}>linea de tiempo</h3>
+          <h3 className={estilos.h1_down}>Time Line</h3>
           <ol class="border-l border-gray-300">
             <li>
               <div class="flex flex-start items-center pt-2 ">
@@ -98,9 +109,7 @@ export default function Portafolio() {
                 <p class={estilos.pli}>2015-2018</p>
               </div>
               <div class={estilos.containerli}>
-                <h4 class="text-slate-400 font-bold text-xl mb-1.5">
-                  Universidad (incompleto 🧑‍🎓 )
-                </h4>
+                <h4 class={estilos.subtittle}>Universidad (incompleto 🧑‍🎓 )</h4>
                 <p class="text-slate-300 mb-3">
                   Estudie 3 Años de Ingenieria de Sistemas en la Universidad De
                   La Amazonia, donde aprendi programacion con java, varios
@@ -178,18 +187,121 @@ export default function Portafolio() {
           </ol>
         </div>
         <section id="skills" className="flex flex-col">
-                <h1 className={estilos.h1NE}>skills</h1>
-                <div className="flex  flex-wrap  content-center justify-center ">
-                    <img className=" h-32 rounded-lg" src={reactimage}></img>
-                    <img  className="h-32  rounded-lg"src={express}></img>
-                    <img className="h-32  rounded-lg"src={html}></img>
-                    <img className="h-32  rounded-lg"src={redux}></img>
-                    <img className="h-32  rounded-lg"src={css}></img>
-                    <img className="h-32  rounded-lg"src={js}></img>
-                    <img className="h-32  rounded-lg"src={tailwind}></img>
-                    <img className="h-32  rounded-lg"src={postgres}></img>
-                    <img className="h-32  rounded-lg"src={node}></img>
-                </div>
+          <h2 className={estilos.h1_down}>skills</h2>
+          <div className="flex  flex-wrap  content-center justify-between ">
+            <img className=" h-32 sm:24 rounded-lg" src={reactimage}></img>
+            <img className="h-32 m-1  rounded-lg" src={express}></img>
+            <img className="h-32 m-1 rounded-lg" src={html}></img>
+            <img className="h-32 m-1 rounded-lg" src={redux}></img>
+            <img className="h-32 m-1 rounded-lg" src={css}></img>
+            <img className="h-32 m-1 rounded-lg" src={js}></img>
+            <img className="h-32 m-1 rounded-lg" src={tailwind}></img>
+            <img className="h-32 m-1 rounded-lg" src={postgres}></img>
+            <img className="h-32 m-1 rounded-lg" src={node}></img>
+          </div>
+        </section>
+        <section id="projects">
+          <h2 className={estilos.h1_down}>Projects</h2>
+          <div className=" flex content-center  flex-col">
+            <div id="pf"></div>
+            <div>
+              <h1 className="py-9">
+                <a
+                  className={estilos.linkGrande}
+                  href="https://carsmarket.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {" "}
+                  👆Cars_Market- visit Project
+                </a>
+              </h1>
+              <p className={estilos.p_2}>
+                Este proyecto fue hecho entre 5 personas:
+                <br />
+                <p className="text-cyan-500">
+                  {" "}
+                  Maicol Ortiz Hernandez, Franco Navarro, Luis Fernando Alvares,
+                  Jose Manuel Lezema y Hector Horacio Heredia.
+                </p>
+                <br />
+                Estuvimos desarrollando una pagina de vehiculos con una amplia
+                variedad de servicios que incluyen :<br />
+                🩸Busqueda de vehiculo<br/>
+                🩸Publicar un vehiculo
+                <br />
+                🩸Contactar con el vendedor del producto
+                <br />
+                🩸servicio de Mercadopago
+                <br />
+                🩸notificaciones de email
+                <br />
+                🩸Registrarse en la pagina
+                <br />
+                🩸Panel de usuario donde podia gestionar sus publicaciones (
+                crear , editar, pausar y marcar como vendido)
+                <br />
+                🩸Panel de administrador( bloquear usuarios , pausar y Editar
+                cualquier publicacion de cualquier usuario registrado)
+              </p>
+            </div>
+            <div class="flex    border-y-4 border-sky-500">
+              <div className=" px-2">
+                <img src={pf1} class="  h-48  rounded-lg" alt="" />
+              </div>
+
+              <div class="px-2">
+                <img src={pf2} class=" h-48  rounded-lg" alt="" />
+              </div>
+              <div class="px-2">
+                <img src={pf3} class="h-48   rounded-lg" alt="" />
+              </div>
+            </div>
+            <div id="pi"></div>
+          </div>
+          <div className=" flex content-center  flex-col">
+            <div id="pf"></div>
+            <div>
+              <h1 className="py-9">
+                <a
+                  className={estilos.linkGrande}
+                  href="https://pi-dogs-peach.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {" "}
+                  👉Pi_Dogs- visit Project
+                </a>
+              </h1>
+              <p className={estilos.p_2}>
+                Estuve desarrollando una single Page de perros, que incluye
+                caracteristicas como
+                <br />
+                🩸Busqueda de perro<br/>
+                🩸Publicar un perro
+                <br />
+                🩸ordenar perros por tamaño,
+                <br />
+                🩸ordenar por alfabeto
+                <br />
+                🩸filtrar por temperamento
+                <br />
+              </p>
+            </div>
+            <div class="flex    border-y-4 border-sky-500">
+              <div className=" px-2">
+                <img src={pi1} class="  h-48  rounded-lg" alt="" />
+              </div>
+
+              <div class="px-2">
+                <img src={pi2} class=" h-48  rounded-lg" alt="" />
+              </div>
+              <div class="px-2">
+                <img src={pi3} class="h-48   rounded-lg" alt="" />
+              </div>
+            </div>
+            <div id="pi"></div>
+          </div>
         </section>
       </section>
     </div>
