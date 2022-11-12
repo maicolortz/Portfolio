@@ -91,6 +91,9 @@ export default function Portafolio() {
               <h1 className={estilos.h1}>📞Contact</h1>
             </HashLink>
           </div>
+          <div className="flex flex-col text-center">
+
+      
           <div className="flex flex-row content-center justify-center">
             <a
               className={estilos.linkGrande}
@@ -115,6 +118,10 @@ export default function Portafolio() {
               ></img>
             </a>
           </div>
+   
+          </div>
+          
+          
         </section>
       </section>
       <section
@@ -140,7 +147,9 @@ export default function Portafolio() {
                 Developer Web
               </strong>
               <br />
+              
             </p>
+    
           </div>
         </div>
         <div id="about parrafo">
@@ -155,6 +164,10 @@ export default function Portafolio() {
             probar de que estoy hecho. Me gustan los videojuegos, la lectura y
             el deporte💪🏁📙
             <br />
+            <p className="underline">
+
+            <a className="text-bold text-yellow-400 text-2xl hover:text-yellow-200 motion-reduce:transition-none cursor-pointer" href="https://drive.google.com/file/d/1eor--85wUrbaMvsgrCC1KROO-0CUJVk2/view?usp=share_link " target="_blank">👔ver Cv.pdf</a> 
+            </p>
             <br />
           </p>
           <h3 className={estilos.h1_down}>Time Line</h3>
