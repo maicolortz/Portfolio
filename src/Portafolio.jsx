@@ -16,58 +16,110 @@ import pf3 from "../src/images/sectionProjects/portafolio_pf_3.png";
 import pi1 from "../src/images/sectionProjects/portafolio_pi_1.png";
 import pi2 from "../src/images/sectionProjects/portafolio_pi_2.png";
 import pi3 from "../src/images/sectionProjects/portafolio_pi_3.png";
+import github from "../src/images/Github-logo.png";
+import linkedin from "../src/images/logo-linkedin.png";
+import emailjs from "emailjs-com";
 import css from "../src/images/css.png";
 import "./App.css";
 import { HashLink } from "react-router-hash-link";
 import { Route, Router } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import swal from "sweetalert";
 export default function Portafolio() {
   const estilos = {
-    h1: " text-3xl  font-bold text-slate-200 flex h-full flex-col transition transform  text-center border-y-4 border-sky-500  mx-8 rounded-2xl hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none  cursor-pointer py-4  tracking-widest tracking-wider ",
+    h1: "font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 text-3xl  font-bold text-slate-200 flex h-full flex-col   transition transform  text-center border-b-4 border-sky-500  mx-2 rounded-2xl hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none  cursor-pointer py-2  tracking-widest tracking-wider shadow-lg shadow-blue-700 hover:shadow-sm ",
     h1NE: "text-3xl  font-bold text-slate-200 flex h-full flex-col transition transform  text-center border-y-4 border-sky-500  mx-8 rounded-2xl py-4 my-20",
-    h1_down:"text-3xl  font-bold text-slate-200 flex h-full flex-col transition transform  text-center border-x-4 border-sky-500  mx-8 rounded-2xl py-4 mt-32 my-20",
+    h1_down:
+      "text-3xl text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 flex h-full flex-col transition transform  text-center border-x-4 border-sky-500  mx-8 rounded-2xl py-4 mt-32 my-20",
     linkGrande: "text-3xl  font-extrabold text-slate-400  ",
 
     h8: "text-7xl  font-extrabold text-slate-200 flex h-full flex-col ",
     p: "text-gray-300 text-xl",
-    p_2:"text-slate-300 mb-3",
+    p_2: "text-slate-300 mb-3",
     containerli: "mt-0.5 ml-4 mb-6 ",
     pli: "text-slate-300 text-md",
     tittle: "text-slate-300 font-bold text-2xl mb-1.5",
     subtittle: "text-slate-400 font-bold text-xl mb-1.5",
+    input:
+      " bg-gradient-to-r from-slate-200  to-slate-300 rounded p-2 text-x w-full text-slate-700 active-slate-300",
+    label: "text-md text-neutral-400 px-2 ",
+    button:
+      "text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-3 py-2.5 text-center mr-2 mb-1 w-32",
   };
+  const enviaremail = (e) => {
+    e.preventDefault();
 
+    emailjs
+      .sendForm(
+        "service_yyiek8l",
+        "template_h374dyb",
+        e.target,
+        "sY_mOvM-y021g3XnS"
+      )
+      .then((res) => {
+        swal({
+          title: "Excelente, me comunicare contigo lo mas pronto posible",
+          icon: "success",
+        }).then(e.target.reset());
+      });
+  };
   return (
-    <div className=" flex   bg-gradient-to-r  from-indigo-900  justify-content to-blue-900   border border-black  ">
+    <div className=" flex   bg-gradient-to-r  from-indigo-900  justify-center to-blue-900    ">
       <section
         id="panel izquierdo"
-        className=" sticky top-0 flex border border-black h-full w-max"
+        className=" sticky top-0 flex  h-full w-max"
       >
-        <section className="sticky top-0   justify-evenly  flex  w-max  h-screen   border border-black flex-col">
+        <section className="sticky top-0   justify-evenly  flex  w-max  h-screen    flex-col border-double border-4 border-sky-500 rounded-md">
           <div>
             <HashLink to="#about">
-              <h1 className={estilos.h1}>About</h1>
+              <h1 className={estilos.h1}>🕵️About</h1>
             </HashLink>
           </div>
           <div>
             <HashLink to="#skills">
-              <h1 className={estilos.h1}>Skills</h1>
+              <h1 className={estilos.h1}>🦾Skills</h1>
             </HashLink>
           </div>
           <div>
             <HashLink to="#projects">
-              <h1 className={estilos.h1}>Projects</h1>
+              <h1 className={estilos.h1}>🚩Projects</h1>
             </HashLink>
           </div>
           <div>
-            <h1 className={estilos.h1}>Contact</h1>
+            <HashLink to="#contact">
+              <h1 className={estilos.h1}>📞Contact</h1>
+            </HashLink>
+          </div>
+          <div className="flex flex-row content-center justify-center">
+            <a
+              className={estilos.linkGrande}
+              href="https://github.com/maicolortz"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                className="w-12 hover:-translate-y-1 motion-reduce:transition-none cursor-pointer "
+                src={github}
+              ></img>
+            </a>
+            <a
+              className={estilos.linkGrande}
+              href="https://www.linkedin.com/in/maicol-ortiz2897/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                className="w-12 hover:-translate-y-1 motion-reduce:transition-none cursor-pointer"
+                src={linkedin}
+              ></img>
+            </a>
           </div>
         </section>
       </section>
       <section
         id="home"
-        className="p-5 flex w-4/5  flex-col border border-white h-full w-max justify-content"
+        className="p-5 flex w-4/5  flex-col  h-full max-w-screen-lg	 justify-center"
       >
         <div id="about" class="flex justify-center items-center ">
           <div>
@@ -78,18 +130,22 @@ export default function Portafolio() {
             ></img>
           </div>
           <div>
-            <h1 id="nombre" className={estilos.h8}>
-              {" "}
-              Maicol Ortiz <br />
-            </h1>
-            <p className="text-red-500 text-7xl font-bold" id="dev">
-              Developer Web
+            <h2 id="nombre" className={estilos.h8}>
+              <strong className=" font-extrabold text-transparent text-7xl bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 ">
+                Maicol Ortiz
+              </strong>{" "}
+            </h2>
+            <p id="dev">
+              <strong className=" font-extrabold text-transparent text-7xl bg-clip-text bg-gradient-to-r from-red-500 to-red-600 ">
+                Developer Web
+              </strong>
+              <br />
             </p>
           </div>
         </div>
         <div id="about parrafo">
           <p className="text-slate-300 mb-3">
-            <strong className=" text-slate-200 bg-red-800 rounded red">
+            <strong className=" font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-cyan-300 to-cyan-400 ">
               Me encanta el Desarrollo Web!!!
             </strong>
             <br />
@@ -227,7 +283,8 @@ export default function Portafolio() {
                 <br />
                 Estuvimos desarrollando una pagina de vehiculos con una amplia
                 variedad de servicios que incluyen :<br />
-                🩸Busqueda de vehiculo<br/>
+                🩸Busqueda de vehiculo
+                <br />
                 🩸Publicar un vehiculo
                 <br />
                 🩸Contactar con el vendedor del producto
@@ -277,7 +334,8 @@ export default function Portafolio() {
                 Estuve desarrollando una single Page de perros, que incluye
                 caracteristicas como
                 <br />
-                🩸Busqueda de perro<br/>
+                🩸Busqueda de perro
+                <br />
                 🩸Publicar un perro
                 <br />
                 🩸ordenar perros por tamaño,
@@ -301,6 +359,57 @@ export default function Portafolio() {
               </div>
             </div>
             <div id="pi"></div>
+          </div>
+        </section>
+        <section id="contact">
+          <h2 className={estilos.h1_down}>contact</h2>
+          <div className="flex  py-8 border border-black content-center justify-center w-max-96 ">
+            <form
+              onSubmit={enviaremail}
+              className="border-double border-4 border-sky-500 p-4 rounded-xl"
+            >
+              <div className="my-2">
+                <input
+                  name="name"
+                  type={"text"}
+                  required
+                  className={estilos.input}
+                  placeholder="name.."
+                ></input>
+              </div>
+              <div className="my-2">
+                <input
+                  name="email"
+                  type={"email"}
+                  required
+                  className={estilos.input}
+                  placeholder=" email.."
+                ></input>
+              </div>
+              <div className="my-2">
+                <input
+                  name="subject"
+                  required
+                  className={estilos.input}
+                  placeholder="subject.."
+                ></input>
+              </div>
+              <div className="my-2">
+                <textarea
+                  name="message"
+                  required
+                  className={estilos.input}
+                  cols="37"
+                  rows={"5"}
+                  placeholder="write your message.."
+                ></textarea>
+              </div>
+              <div className=" flex justify-center  content-center">
+                <button type="submit" className={estilos.button}>
+                  send
+                </button>
+              </div>
+            </form>
           </div>
         </section>
       </section>

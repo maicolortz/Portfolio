@@ -4,18 +4,7 @@
 #dev {
   animation: move linear 4000ms infinite;  
 }
-#nombre{
-    text-shadow:
-      0.2rem -0.2rem 0 hsla(0, 100%, 50%, 1), 
-      0.1rem -0.1rem 0 hsla(0, 100%, 50%, 1), 
-      2px -2px 0 hsla(0, 100%, 50%, 1), 
-      1px -1px 0 hsla(0, 100%, 50%, 1),
-      -4px 4px 0    rgba(255, 0, 0, 0.555), 
-      -3px 3px 0 rgb(179, 255, 0), 
-      -2px 2px 0 rgb(255, 153, 0), 
-      -1px 1px 0 rgb(255, 145, 0)
-    ;
-}
+
 
 h1:hover{
     animation: move forwards 1000ms;
