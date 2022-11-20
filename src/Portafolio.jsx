@@ -78,12 +78,12 @@ export default function Portafolio() {
     console.log(elemento.style.width)
   }
   return (
-    <div className=" flex   bg-gradient-to-r  from-zinc-900  justify-center to-black     ">
+    <div className=" flex  p-0 m-0 bg-gradient-to-r  from-zinc-900  justify-center to-black     ">
       
       <section
         id="panel izquierdo"
         className=" sticky top-0 flex  h-full w-max"
-      ><h2  style={{display:"initial", zIndex:"200", position:"absolute", cursor:"pointer"}} onClick={e=>esconder(e)} className=" opacity-70 text-slate-400 font-bold text-xl mb-1.5 hover:text-blue-800">⬅️Panel➡️</h2>
+      ><h2  style={{display:"initial", zIndex:"500" , position:"absolute",  cursor:"pointer"}} onClick={e=>esconder(e)} className=" opacity-70 text-slate-400 font-bold text-xl mb-1.5 hover:text-blue-800">⬅️Panel➡️</h2>
         <section id="panelizquierdo" className="sticky top-0   justify-evenly  flex  w-max  h-screen    flex-col  border-t-8 border-b-8 border-sky-500 rounded-md shadow-2xl shadow-blue-700 ">
           
           <div>
@@ -136,7 +136,7 @@ export default function Portafolio() {
       </section>
       <section
         id="home"
-        className=" p-5 flex w-4/5  flex-col  h-full max-w-screen-lg	 justify-center "
+        className=" py-8 px-2 flex w-4/5  flex-col  h-full max-w-screen-lg	 justify-center "
       >
         <div id="about" class=" flex justify-center flex-col items-center  ">
           <div>
@@ -428,7 +428,7 @@ export default function Portafolio() {
         </section>
         <section id="contact">
           <h2 className={estilos.h1_down}>contact</h2>
-          <div className="flex  py-8 border border-black content-center justify-center w-max-96 ">
+          <div className="flex  py-8  content-center justify-center w-max-96 ">
             <form
               onSubmit={enviaremail}
               className="border-double border-4 border-sky-500 p-4 rounded-xl"
