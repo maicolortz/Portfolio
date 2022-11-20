@@ -10,9 +10,9 @@ import js from "../src/images/javascript.png";
 import html from "../src/images/html.png";
 import node from "../src/images/node.png";
 import express from "../src/images/express-js.png";
-import pf1 from "../src/images/sectionProjects/portafolio_pf_1.png";
-import pf2 from "../src/images/sectionProjects/portafolio_pf_2.png";
-import pf3 from "../src/images/sectionProjects/portafolio_pf_3.png";
+import pf1 from "../src/images/sectionProjects/pf2.png";
+import pf2 from "../src/images/sectionProjects/pf3.png";
+import pf3 from "../src/images/sectionProjects/pf5.jpeg";
 import pi1 from "../src/images/sectionProjects/portafolio_pi_1.png";
 import pi2 from "../src/images/sectionProjects/portafolio_pi_2.png";
 import pi3 from "../src/images/sectionProjects/portafolio_pi_3.png";
@@ -26,15 +26,19 @@ import { Route, Router } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import swal from "sweetalert";
+import Carousel from "./Carousel";
+import { CarouselData } from "./CarouselData";
+import Modal from "./Modal";
 export default function Portafolio() {
   const estilos = {
-    h1: "font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 text-3xl  font-bold text-slate-200 flex h-full flex-col   transition transform  text-center border-b-4 border-sky-500  mx-2 rounded-2xl hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none  cursor-pointer py-2  tracking-widest tracking-wider shadow-lg shadow-blue-700 hover:shadow-sm ",
+    h1: "font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 text-xl  font-bold text-slate-200 flex h-full flex-col   transition transform  text-center border-b-4 border-sky-500  mx-2 rounded-2xl hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none  cursor-pointer py-2  tracking-widest tracking-wider shadow-lg shadow-blue-700 hover:shadow-sm ",
     h1NE: "text-3xl  font-bold text-slate-200 flex h-full flex-col transition transform  text-center border-y-4 border-sky-500  mx-8 rounded-2xl py-4 my-20",
     h1_down:
-      "text-3xl text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 flex h-full flex-col transition transform  text-center border-x-4 border-sky-500  mx-8 rounded-2xl py-4 mt-32 my-20",
-    linkGrande: "text-3xl  font-extrabold text-slate-400  ",
+      " shadow-2xl shadow-blue-700 text-3xl text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 flex h-full flex-col transition transform  text-center border-x-4 border-sky-500  mx-8 rounded-2xl py-4 mt-32 my-20 ",
+    linkGrande: "text-3xl text-center font-extrabold text-slate-300  ",
+    info: " text-xl text-slate-400 border-b-4 border-blue-800 rounded-md sm:text-2xl ml-3 text-transparent font-extrabold shadow-xl hover:shadow-blue-700",
 
-    h8: "text-7xl  font-extrabold text-slate-200 flex h-full flex-col ",
+    h8: "text-4xl  font-extrabold text-slate-200 sm:text-7xl flex-col ",
     p: "text-gray-300 text-xl",
     p_2: "text-slate-300 mb-3",
     containerli: "mt-0.5 ml-4 mb-6 ",
@@ -64,13 +68,24 @@ export default function Portafolio() {
         }).then(e.target.reset());
       });
   };
+  const esconder=e=>{
+    e.preventDefault();
+    let elemento = document.getElementById("panelizquierdo");
+    if(elemento.style.display==="none"){elemento.style.display="flex"}else{
+      elemento.style.display="none"
+    }
+    console.log(elemento.style)
+    console.log(elemento.style.width)
+  }
   return (
-    <div className=" flex   bg-gradient-to-r  from-indigo-900  justify-center to-blue-900    ">
+    <div className=" flex   bg-gradient-to-r  from-zinc-900  justify-center to-black     ">
+      
       <section
         id="panel izquierdo"
         className=" sticky top-0 flex  h-full w-max"
-      >
-        <section className="sticky top-0   justify-evenly  flex  w-max  h-screen    flex-col border-double border-4 border-sky-500 rounded-md">
+      ><h2  style={{display:"initial", zIndex:"200", position:"absolute", cursor:"pointer"}} onClick={e=>esconder(e)} className=" opacity-70 text-slate-400 font-bold text-xl mb-1.5 hover:text-blue-800">⬅️Panel➡️</h2>
+        <section id="panelizquierdo" className="sticky top-0   justify-evenly  flex  w-max  h-screen    flex-col  border-t-8 border-b-8 border-sky-500 rounded-md shadow-2xl shadow-blue-700 ">
+          
           <div>
             <HashLink to="#about">
               <h1 className={estilos.h1}>🕵️About</h1>
@@ -92,64 +107,59 @@ export default function Portafolio() {
             </HashLink>
           </div>
           <div className="flex flex-col text-center">
-
-      
-          <div className="flex flex-row content-center justify-center">
-            <a
-              className={estilos.linkGrande}
-              href="https://github.com/maicolortz"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                className="w-12 hover:-translate-y-1 motion-reduce:transition-none cursor-pointer "
-                src={github}
-              ></img>
-            </a>
-            <a
-              className={estilos.linkGrande}
-              href="https://www.linkedin.com/in/maicol-ortiz2897/"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                className="w-12 hover:-translate-y-1 motion-reduce:transition-none cursor-pointer"
-                src={linkedin}
-              ></img>
-            </a>
+            <div className="flex flex-row content-center justify-center">
+              <a
+                className={estilos.linkGrande}
+                href="https://github.com/maicolortz"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  className="w-12 hover:-translate-y-1 motion-reduce:transition-none cursor-pointer "
+                  src={github}
+                ></img>
+              </a>
+              <a
+                className={estilos.linkGrande}
+                href="https://www.linkedin.com/in/maicol-ortiz2897/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  className="w-12 hover:-translate-y-1 motion-reduce:transition-none cursor-pointer"
+                  src={linkedin}
+                ></img>
+              </a>
+            </div>
           </div>
-   
-          </div>
-          
-          
         </section>
       </section>
       <section
         id="home"
-        className="p-5 flex w-4/5  flex-col  h-full max-w-screen-lg	 justify-center"
+        className=" p-5 flex w-4/5  flex-col  h-full max-w-screen-lg	 justify-center "
       >
-        <div id="about" class="flex justify-center items-center ">
+        <div id="about" class=" flex justify-center flex-col items-center  ">
           <div>
             <img
-              className=" max-w-lg opacity-90  rounded-3xl grayscale"
+              id="perfil"
+              className=" opacity-90 w-80 rounded-full shadow-2xl shadow-blue-700 border-blue-500 border-y-8 "
               src={image}
               alt="imagen de perfil"
             ></img>
           </div>
-          <div>
+
+          <div className="mb-4">
             <h2 id="nombre" className={estilos.h8}>
-              <strong className=" font-extrabold text-transparent text-7xl bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 ">
+              <strong className="text-4xl w-2/2 text-transparent sm:text-5xl md:text-6xl bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 ">
                 Maicol Ortiz
               </strong>{" "}
             </h2>
             <p id="dev">
-              <strong className=" font-extrabold text-transparent text-7xl bg-clip-text bg-gradient-to-r from-red-500 to-red-600 ">
+              <strong className=" font-extrabold text-transparent text-4xl   sm:text-5xl md:text-6xl bg-clip-text bg-gradient-to-r from-red-500 to-red-600 ">
                 Developer Web
               </strong>
               <br />
-              
             </p>
-    
           </div>
         </div>
         <div id="about parrafo">
@@ -165,8 +175,13 @@ export default function Portafolio() {
             el deporte💪🏁📙
             <br />
             <p className="underline">
-
-            <a className="text-bold text-yellow-400 text-2xl hover:text-yellow-200 motion-reduce:transition-none cursor-pointer" href="https://drive.google.com/file/d/1eor--85wUrbaMvsgrCC1KROO-0CUJVk2/view?usp=share_link " target="_blank">👔ver Cv.pdf</a> 
+              <a
+                className="text-bold text-yellow-400 text-2xl hover:text-yellow-200 motion-reduce:transition-none cursor-pointer"
+                href="https://drive.google.com/file/d/1eor--85wUrbaMvsgrCC1KROO-0CUJVk2/view?usp=share_link "
+                target="_blank"
+              >
+                👔ver Cv.pdf
+              </a>
             </p>
             <br />
           </p>
@@ -202,18 +217,20 @@ export default function Portafolio() {
                   plomeros24. En la ciudad de Ibague-Tolima en Colombia. Algunos
                   trabajos que hize fueron los siguientes:
                 </p>
-
-                <div class="flex    border-y-4 border-sky-500">
-                  <div className=" px-2">
-                    <img src={im1} class="  h-48  rounded-lg" alt="" />
-                  </div>
-
-                  <div class="px-2">
-                    <img src={im2} class=" h-48  rounded-lg" alt="" />
-                  </div>
-                  <div class="px-2">
-                    <img src={im3} class="h-48   rounded-lg" alt="" />
-                  </div>
+                <div className="flex content-center justify-center">
+                  <Carousel
+                    data={[
+                      {
+                        image: "" + im1 + "",
+                      },
+                      {
+                        image: "" + im2 + "",
+                      },
+                      {
+                        image: "" + im3 + "",
+                      },
+                    ]}
+                  />
                 </div>
               </div>
             </li>
@@ -257,93 +274,97 @@ export default function Portafolio() {
         </div>
         <section id="skills" className="flex flex-col">
           <h2 className={estilos.h1_down}>skills</h2>
-          <div className="flex  flex-wrap  content-center justify-between ">
-            <img className=" h-32 sm:24 rounded-lg" src={reactimage}></img>
-            <img className="h-32 m-1  rounded-lg" src={express}></img>
-            <img className="h-32 m-1 rounded-lg" src={html}></img>
-            <img className="h-32 m-1 rounded-lg" src={redux}></img>
-            <img className="h-32 m-1 rounded-lg" src={css}></img>
-            <img className="h-32 m-1 rounded-lg" src={js}></img>
-            <img className="h-32 m-1 rounded-lg" src={tailwind}></img>
-            <img className="h-32 m-1 rounded-lg" src={postgres}></img>
-            <img className="h-32 m-1 rounded-lg" src={node}></img>
+          <div className="flex  flex-wrap  content-center justify-around ">
+            <img className=" h-20 sm:h-32 rounded-lg" src={reactimage}></img>
+            <img className="h-20 sm:h-32 rounded-lg" src={express}></img>
+            <img className="h-20 sm:h-32 rounded-lg" src={html}></img>
+            <img className="h-20 sm:h-32 rounded-lg" src={redux}></img>
+            <img className="h-20 sm:h-32 rounded-lg" src={css}></img>
+            <img className="h-20 sm:h-32 rounded-lg" src={js}></img>
+            <img className="h-20 sm:h-32 rounded-lg" src={tailwind}></img>
+            <img className="h-20 sm:h-32 rounded-lg" src={postgres}></img>
+            <img className="h-20 sm:h-32 rounded-lg" src={node}></img>
           </div>
         </section>
         <section id="projects">
           <h2 className={estilos.h1_down}>Projects</h2>
-          <div className=" flex content-center  flex-col">
+          <div className=" flex content-center justify-center">
             <div id="pf"></div>
-            <div>
-              <h1 className="py-9">
-                <a
-                  className={estilos.linkGrande}
-                  href="https://carsmarket.vercel.app/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  {" "}
-                  👆Cars_Market- visit Project
-                </a>
-              </h1>
-              <p className={estilos.p_2}>
-                Este proyecto fue hecho entre 5 personas:
-                <br />
-                <p className="text-cyan-500">
-                  {" "}
-                  Maicol Ortiz Hernandez, Franco Navarro, Luis Fernando Alvares,
-                  Jose Manuel Lezema y Hector Horacio Heredia.
-                </p>
-                <br />
-                Estuvimos desarrollando una pagina de vehiculos con una amplia
-                variedad de servicios que incluyen :<br />
-                🩸Busqueda de vehiculo
-                <br />
-                🩸Publicar un vehiculo
-                <br />
-                🩸Contactar con el vendedor del producto
-                <br />
-                🩸servicio de Mercadopago
-                <br />
-                🩸notificaciones de email
-                <br />
-                🩸Registrarse en la pagina
-                <br />
-                🩸Panel de usuario donde podia gestionar sus publicaciones (
-                crear , editar, pausar y marcar como vendido)
-                <br />
-                🩸Panel de administrador( bloquear usuarios , pausar y Editar
-                cualquier publicacion de cualquier usuario registrado)
-              </p>
-            </div>
-            <div class="flex    border-y-4 border-sky-500">
-              <div className=" px-2">
-                <img src={pf1} class="  h-48  rounded-lg" alt="" />
-              </div>
 
-              <div class="px-2">
-                <img src={pf2} class=" h-48  rounded-lg" alt="" />
+            <div className="flex content-center justify-center flex-col">
+              <div>
+                <h2 className={estilos.linkGrande}>Cars_Market</h2>
+                <div className="flex justify-center content-center">
+                  <Modal
+                    titulo_boton="info"
+                    estilos={estilos}
+                    titulo_mensaje="Cars-Market"
+                    mensaje={
+                      <p className={estilos.p_2}>
+                        Este proyecto fue hecho entre 5 personas:
+                        <br />
+                        <p className="text-cyan-500">
+                          {" "}
+                          Maicol Ortiz Hernandez, Franco Navarro, Luis Fernando
+                          Alvares, Jose Manuel Lezema y Hector Horacio Heredia.
+                        </p>
+                        <br />
+                        servicios :<br />
+                        🩸Busqueda de vehiculo
+                        <br />
+                        🩸Publicar un vehiculo
+                        <br />
+                        🩸Contactar con el vendedor del producto
+                        <br />
+                        🩸servicio de Mercadopago
+                        <br />
+                        🩸notificaciones de email
+                        <br />
+                        🩸Registro
+                        <br />
+                        🩸Gestion de publicaciones ( crear , editar, pausar y
+                        marcar como vendido)
+                        <br />
+                        🩸Panel de administrador( bloquear usuarios , pausar y
+                        Editar cualquier publicacion de cualquier usuario
+                        registrado)
+                      </p>
+                    }
+                  />
+                  <a
+                    className={estilos.linkGrande}
+                    href="https://carsmarket.vercel.app/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {" "}
+                    <button className={estilos.info}>👆visitar proyecto</button>
+                  </a>
+                </div>
               </div>
-              <div class="px-2">
-                <img src={pf3} class="h-48   rounded-lg" alt="" />
-              </div>
+              <Carousel
+                data={[
+                  {
+                    image: "" + pf1 + "",
+                  },
+                  {
+                    image: "" + pf2 + "",
+                  },
+                  {
+                    image: "" + pf3 + "",
+                  },
+                ]}
+              />
             </div>
             <div id="pi"></div>
           </div>
           <div className=" flex content-center  flex-col">
             <div id="pf"></div>
+
             <div>
-              <h1 className="py-9">
-                <a
-                  className={estilos.linkGrande}
-                  href="https://pi-dogs-peach.vercel.app/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  {" "}
-                  👉Pi_Dogs- visit Project
-                </a>
-              </h1>
-              <p className={estilos.p_2}>
+              <h2 className={estilos.linkGrande}>Pi_Dogs</h2>
+              <div className="flex justify-center content-center">
+                <Modal estilos={estilos} titulo_boton="info" titulo_mensaje="Pi-Dogs" mensaje={<p className={estilos.p_2}>
                 Estuve desarrollando una single Page de perros, que incluye
                 caracteristicas como
                 <br />
@@ -353,13 +374,44 @@ export default function Portafolio() {
                 <br />
                 🩸ordenar perros por tamaño,
                 <br />
-                🩸ordenar por alfabeto
+                🩸ordenar razas por alfabeto
                 <br />
                 🩸filtrar por temperamento
                 <br />
-              </p>
+                🩸creacion de perro
+                <br />
+              </p>}></Modal>
+                <a
+                  className={estilos.linkGrande}
+                  href="https://pi-dogs-peach.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {" "}
+                  <button className={estilos.info}>
+                    👆visitar proyecto
+                  </button>{" "}
+                </a>
+              </div>
+
+              
             </div>
-            <div class="flex    border-y-4 border-sky-500">
+            <div className="flex content-center justify-center">
+              <Carousel
+                data={[
+                  {
+                    image: "" + pi1 + "",
+                  },
+                  {
+                    image: "" + pi2 + "",
+                  },
+                  {
+                    image: "" + pi3 + "",
+                  },
+                ]}
+              />
+            </div>
+            {/*  <div class="flex    border-y-4 border-sky-500">
               <div className=" px-2">
                 <img src={pi1} class="  h-48  rounded-lg" alt="" />
               </div>
@@ -370,7 +422,7 @@ export default function Portafolio() {
               <div class="px-2">
                 <img src={pi3} class="h-48   rounded-lg" alt="" />
               </div>
-            </div>
+            </div> */}
             <div id="pi"></div>
           </div>
         </section>
