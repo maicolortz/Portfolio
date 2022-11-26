@@ -1,25 +1,25 @@
-import image from "../src/images/per.png";
+import image from "../src/images/per.webp";
 import im2 from "../src/images/plo2.jpg";
-import im1 from "../src/images/plo1.png";
-import im3 from "../src/images/plo3.png";
+import im1 from "../src/images/plo1.webp";
+import im3 from "../src/images/plo3.webp";
 import reactimage from "../src/images/react.png";
 import postgres from "../src/images/postgres.png";
 import redux from "../src/images/redux.png";
-import tailwind from "../src/images/tailwind.png";
-import js from "../src/images/javascript.png";
-import html from "../src/images/html.png";
+import tailwind from "../src/images/tailwind.webp";
+import js from "../src/images/javascript.webp";
+import html from "../src/images/html.webp";
 import node from "../src/images/node.png";
 import express from "../src/images/express-js.png";
-import pf1 from "../src/images/sectionProjects/pf2.png";
-import pf2 from "../src/images/sectionProjects/pf3.png";
-import pf3 from "../src/images/sectionProjects/pf5.jpeg";
-import pi1 from "../src/images/sectionProjects/portafolio_pi_1.png";
-import pi2 from "../src/images/sectionProjects/portafolio_pi_2.png";
-import pi3 from "../src/images/sectionProjects/portafolio_pi_3.png";
-import github from "../src/images/Github-logo.png";
-import linkedin from "../src/images/logo-linkedin.png";
+import pf1 from "../src/images/sectionProjects/pf2.webp";
+import pf2 from "../src/images/sectionProjects/pf3.webp";
+import pf3 from "../src/images/sectionProjects/pf5.webp";
+import pi1 from "../src/images/sectionProjects/portafolio_pi_1.webp";
+import pi2 from "../src/images/sectionProjects/portafolio_pi_2.webp";
+import pi3 from "../src/images/sectionProjects/portafolio_pi_3.webp";
+import github from "../src/images/github.png";
+import linkedin from "../src/images/logo-linkedin.webp";
 import emailjs from "emailjs-com";
-import css from "../src/images/css.png";
+import css from "../src/images/css.webp";
 import "./App.css";
 import { HashLink } from "react-router-hash-link";
 import { Route, Router } from "react-router-dom";
@@ -27,15 +27,14 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import swal from "sweetalert";
 import Carousel from "./Carousel";
-import { CarouselData } from "./CarouselData";
 import Modal from "./Modal";
 export default function Portafolio() {
   const estilos = {
-    h1: "font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 text-xl  font-bold text-slate-200 flex h-full flex-col   transition transform  text-center border-b-4 border-sky-500  mx-2 rounded-2xl hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none  cursor-pointer py-2  tracking-widest tracking-wider shadow-lg shadow-blue-700 hover:shadow-sm ",
+    h1: "font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 text-sm  font-bold text-slate-200 flex h-full flex-col   transition transform  text-center border-b-2 sm:border-b-4 border-sky-500  mx-2 rounded-2xl hover:-translate-y-2 motion-reduce:transition-none motion-reduce:hover:transform-none  cursor-pointer py-2  tracking-widest tracking-wider shadow-lg shadow-blue-700 hover:shadow-sm sm:text-lg md:text-xl",
     h1NE: "text-3xl  font-bold text-slate-200 flex h-full flex-col transition transform  text-center border-y-4 border-sky-500  mx-8 rounded-2xl py-4 my-20",
     h1_down:
-      " shadow-2xl shadow-blue-700 text-3xl text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 flex h-full flex-col transition transform  text-center border-x-4 border-sky-500  mx-8 rounded-2xl py-4 mt-32 my-20 ",
-    linkGrande: "text-3xl text-center font-extrabold text-slate-300  ",
+      " shadow-2xl shadow-blue-700 text-2xl text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-neutral-300 to-neutral-400 flex h-full flex-col transition transform  text-center border-x-4 border-sky-500  mx-8 rounded-2xl py-4 mt-32 my-20 ",
+    linkGrande: "text-2xl text-center font-extrabold text-slate-300  ",
     info: " text-xl text-slate-400 border-b-4 border-blue-800 rounded-md sm:text-2xl ml-3 text-transparent font-extrabold shadow-xl hover:shadow-blue-700",
 
     h8: "text-4xl  font-extrabold text-slate-200 sm:text-7xl flex-col ",
@@ -68,24 +67,29 @@ export default function Portafolio() {
         }).then(e.target.reset());
       });
   };
-  const esconder=e=>{
+  const esconder = (e) => {
     e.preventDefault();
     let elemento = document.getElementById("panelizquierdo");
-    if(elemento.style.display==="none"){elemento.style.display="flex"}else{
-      elemento.style.display="none"
+    if (elemento.style.display === "none") {
+      elemento.style.display = "flex";
+    } else {
+      elemento.style.display = "none";
     }
-    console.log(elemento.style)
-    console.log(elemento.style.width)
-  }
+    console.log(elemento.style);
+    console.log(elemento.style.width);
+  };
   return (
-    <div className=" flex  p-0 m-0 bg-gradient-to-r  from-zinc-900  justify-center to-black     ">
-      
+    <div className=" flex flex-col md:flex-row content-center   p-0 m-0 bg-gradient-to-r  from-zinc-900  justify-center items-center md:items-start to-black     ">
       <section
         id="panel izquierdo"
-        className=" sticky top-0 flex  h-full w-max"
-      ><h2  style={{display:"initial", zIndex:"500" , position:"absolute",  cursor:"pointer"}} onClick={e=>esconder(e)} className=" opacity-70 text-slate-400 font-bold text-xl mb-1.5 hover:text-blue-800">⬅️Panel➡️</h2>
-        <section id="panelizquierdo" className="sticky top-0   justify-evenly  flex  w-max  h-screen    flex-col  border-t-8 border-b-8 border-sky-500 rounded-md shadow-2xl shadow-blue-700 ">
-          
+        className=" sticky top-0 flex md:sticky h-full w-max z-50 opacity-100 bg-gradient-to-r  from-zinc-900   to-black "
+      >
+        {/* <h2  style={{display:"initial", zIndex:"500" , position:"absolute",  cursor:"pointer"}} onClick={e=>esconder(e)} className=" opacity-70 text-slate-400 font-bold text-xl mb-1.5 hover:text-blue-800">⬅️Panel➡️</h2>
+         */}{" "}
+        <section
+          id="panelizquierdo"
+          className="  z-40  justify-evenly flex-wrap flex  w-screen opacity-100 py-4 md:w-auto   md:h-screen md:flex-col    border-b-4  md:border-t-8 md:border-b-8 border-sky-500 rounded-md shadow-2xl shadow-blue-700 "
+        >
           <div>
             <HashLink to="#about">
               <h1 className={estilos.h1}>🕵️About</h1>
@@ -106,8 +110,8 @@ export default function Portafolio() {
               <h1 className={estilos.h1}>📞Contact</h1>
             </HashLink>
           </div>
-          <div className="flex flex-col text-center">
-            <div className="flex flex-row content-center justify-center">
+          <div className="flex flex-col absolute right-5 top-20 sm:relative sm:right-0 sm:top-0">
+            <div className="flex flex-row content-center justify-center items-center gap-4 ">
               <a
                 className={estilos.linkGrande}
                 href="https://github.com/maicolortz"
@@ -115,7 +119,7 @@ export default function Portafolio() {
                 rel="noopener"
               >
                 <img
-                  className="w-12 hover:-translate-y-1 motion-reduce:transition-none cursor-pointer "
+                  className="w-8 sm:w-10 hover:-translate-y-1 motion-reduce:transition-none cursor-pointer rounded-full "
                   src={github}
                 ></img>
               </a>
@@ -126,10 +130,11 @@ export default function Portafolio() {
                 rel="noopener"
               >
                 <img
-                  className="w-12 hover:-translate-y-1 motion-reduce:transition-none cursor-pointer"
+                  className="w-8 sm:w-10 hover:-translate-y-1 motion-reduce:transition-none cursor-pointer"
                   src={linkedin}
                 ></img>
               </a>
+           
             </div>
           </div>
         </section>
@@ -274,16 +279,44 @@ export default function Portafolio() {
         </div>
         <section id="skills" className="flex flex-col">
           <h2 className={estilos.h1_down}>skills</h2>
-          <div className="flex  flex-wrap  content-center justify-around ">
-            <img className=" h-20 sm:h-32 rounded-lg" src={reactimage}></img>
-            <img className="h-20 sm:h-32 rounded-lg" src={express}></img>
-            <img className="h-20 sm:h-32 rounded-lg" src={html}></img>
-            <img className="h-20 sm:h-32 rounded-lg" src={redux}></img>
-            <img className="h-20 sm:h-32 rounded-lg" src={css}></img>
-            <img className="h-20 sm:h-32 rounded-lg" src={js}></img>
-            <img className="h-20 sm:h-32 rounded-lg" src={tailwind}></img>
-            <img className="h-20 sm:h-32 rounded-lg" src={postgres}></img>
-            <img className="h-20 sm:h-32 rounded-lg" src={node}></img>
+          <div className="flex  flex-wrap  content-center justify-around gap-8 sm:gap-16">
+            <img
+              className=" h-20 sm:h-32 rounded-lg animate-bounce2"
+              src={reactimage}
+            ></img>
+
+            <img
+              className="h-24 sm:h-28 md:h-32 rounded-lg animate-bounce3  "
+              src={express}
+            ></img>
+            <img
+              className="h-24 sm:h-28 md:h-32 rounded-lg animate-bounce2 "
+              src={html}
+            ></img>
+            <img
+              className="h-24 sm:h-28 md:h-32 rounded-lg animate-bounce3 "
+              src={redux}
+            ></img>
+            <img
+              className="h-24 sm:h-28 md:h-32 rounded-lg animate-bounce2"
+              src={css}
+            ></img>
+            <img
+              className="h-24 sm:h-28 md:h-32 rounded-lg animate-bounce3"
+              src={js}
+            ></img>
+            <img
+              className="h-24 sm:h-28 md:h-32 rounded-lg animate-bounce2"
+              src={tailwind}
+            ></img>
+            <img
+              className="h-24 sm:h-28 md:h-32 rounded-lg animate-bounce2"
+              src={postgres}
+            ></img>
+            <img
+              className="h-24 sm:h-28 md:h-32 rounded-lg animate-bounce3"
+              src={node}
+            ></img>
           </div>
         </section>
         <section id="projects">
@@ -364,23 +397,30 @@ export default function Portafolio() {
             <div>
               <h2 className={estilos.linkGrande}>Pi_Dogs</h2>
               <div className="flex justify-center content-center">
-                <Modal estilos={estilos} titulo_boton="info" titulo_mensaje="Pi-Dogs" mensaje={<p className={estilos.p_2}>
-                Estuve desarrollando una single Page de perros, que incluye
-                caracteristicas como
-                <br />
-                🩸Busqueda de perro
-                <br />
-                🩸Publicar un perro
-                <br />
-                🩸ordenar perros por tamaño,
-                <br />
-                🩸ordenar razas por alfabeto
-                <br />
-                🩸filtrar por temperamento
-                <br />
-                🩸creacion de perro
-                <br />
-              </p>}></Modal>
+                <Modal
+                  estilos={estilos}
+                  titulo_boton="info"
+                  titulo_mensaje="Pi-Dogs"
+                  mensaje={
+                    <p className={estilos.p_2}>
+                      Estuve desarrollando una single Page de perros, que
+                      incluye caracteristicas como
+                      <br />
+                      🩸Busqueda de perro
+                      <br />
+                      🩸Publicar un perro
+                      <br />
+                      🩸ordenar perros por tamaño,
+                      <br />
+                      🩸ordenar razas por alfabeto
+                      <br />
+                      🩸filtrar por temperamento
+                      <br />
+                      🩸creacion de perro
+                      <br />
+                    </p>
+                  }
+                ></Modal>
                 <a
                   className={estilos.linkGrande}
                   href="https://pi-dogs-peach.vercel.app/"
@@ -393,8 +433,6 @@ export default function Portafolio() {
                   </button>{" "}
                 </a>
               </div>
-
-              
             </div>
             <div className="flex content-center justify-center">
               <Carousel
@@ -428,10 +466,10 @@ export default function Portafolio() {
         </section>
         <section id="contact">
           <h2 className={estilos.h1_down}>contact</h2>
-          <div className="flex  py-8  content-center justify-center w-max-96 ">
+          <div className="flex  py-6   items-center  content-center justify-center  flex-col">
             <form
               onSubmit={enviaremail}
-              className="border-double border-4 border-sky-500 p-4 rounded-xl"
+              className="border-double border-4 border-sky-500 p-4 rounded-xl w-max-96"
             >
               <div className="my-2">
                 <input
@@ -475,7 +513,9 @@ export default function Portafolio() {
                 </button>
               </div>
             </form>
+       
           </div>
+          <div></div>
         </section>
       </section>
     </div>
