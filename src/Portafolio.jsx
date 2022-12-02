@@ -182,7 +182,7 @@ export default function Portafolio() {
             <p className="underline">
               <a
                 className="text-bold text-yellow-400 text-2xl hover:text-yellow-200 motion-reduce:transition-none cursor-pointer"
-                href="https://drive.google.com/file/d/1eor--85wUrbaMvsgrCC1KROO-0CUJVk2/view?usp=share_link "
+                href="https://drive.google.com/file/d/1cKxwecJMw1-wGZtJYbqdPhM4hHva-Z0B/view"
                 target="_blank"
               >
                 👔ver Cv.pdf
