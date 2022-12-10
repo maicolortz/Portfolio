@@ -173,11 +173,7 @@ export default function Portafolio() {
               Me encanta el Desarrollo Web!!!
             </strong>
             <br />
-            Siempre he sido curioso con las diferentes tecnologias cada vez que
-            aparecen y como estas se va desarrollando dia tras dia. Me gusta
-            tener retos que permitan ir a un nivel mas alla de donde estoy y asi
-            probar de que estoy hecho. Me gustan los videojuegos, la lectura y
-            el deporte💪🏁📙
+            He sido curioso por las tecnologías nuevas, ver su desarrollo y crecimiento me han sumergido en un mundo lleno de oportunidades y alcance. Me gusta tener retos que me permitan ir a un siguiente nivel y así probar mi valor. Me gustan los videojuegos, la lectura y el deporte.💪🏁📙
             <br />
             <p className="underline">
               <a
@@ -186,8 +182,10 @@ export default function Portafolio() {
                 target="_blank"
               >
                 👔ver Cv.pdf
+              
               </a>
             </p>
+            
             <br />
           </p>
           <h3 className={estilos.h1_down}>Time Line</h3>
@@ -200,10 +198,7 @@ export default function Portafolio() {
               <div class={estilos.containerli}>
                 <h4 class={estilos.subtittle}>Universidad (incompleto 🧑‍🎓 )</h4>
                 <p class="text-slate-300 mb-3">
-                  Estudie 3 Años de Ingenieria de Sistemas en la Universidad De
-                  La Amazonia, donde aprendi programacion con java, varios
-                  niveles de matematicas, fisica, biologia, quimica, estadistica
-                  entre otros campos que enriquecieron mi contexto.
+                Estudie 3 Años de Ingeniería de Sistemas en la Universidad de la Amazonia, aprendí programación con java, distintos niveles de matemáticas, física, biología, química, estadística, entre otros campos que enriquecieron mi contexto como desarrollador.
                 </p>
               </div>
             </li>
@@ -214,13 +209,10 @@ export default function Portafolio() {
               </div>
               <div class={estilos.containerli}>
                 <h4 class="text-slate-400 font-bold text-xl mb-1.5">
-                  Diseñador Publicitario en Servicios de Plomeria 💪
+                Diseñador Publicitario en Servicios de Plomería💪
                 </h4>
                 <p class="text-slate-300 mb-3">
-                  Encargado de la atencion al cliente y creacion de contenido
-                  publicitario en facebook y whatsapp para la empresa
-                  plomeros24. En la ciudad de Ibague-Tolima en Colombia. Algunos
-                  trabajos que hize fueron los siguientes:
+                Encargado de la atención al cliente y creación de contenido publicitario en redes sociales  para la empresa Plomeros24, en la ciudad de Ibagué-Tolima en Colombia. Algunos trabajos que hice fueron los siguientes:
                 </p>
                 <div className="flex content-center justify-center">
                   <Carousel
@@ -249,13 +241,7 @@ export default function Portafolio() {
                   Oracle Next Education (Bootcamp flexible time 🧑‍🎓 )
                 </h4>
                 <p class="text-slate-300 mb-3">
-                  Esta formacion se trato del desarrollo de habilidades frontend
-                  como Html, Css, Javascript, Css3 y Git. Adicionalmente me
-                  permitio tener mas fluidez en el desarrollo del proyecto final
-                  de Henry, gracias al aprendizaje en git se me facilito la
-                  organizacion del equipo en github y la dispersion de dudas de
-                  mis compañeros con todo lo relacionado a ramas y cambios en
-                  git .
+                Esta formación se trató del desarrollo de habilidades frontend como Html, Css, Javascript, Css3 y Git. Adicionalmente me permitió tener más fluidez en el desarrollo del proyecto final de Henry, gracias al aprendizaje en git se me facilito la organización del equipo en github y la dispersión de dudas de mis compañeros con todo lo relacionado a ramas y cambios en git.
                 </p>
               </div>
               <div class={estilos.containerli}>
@@ -263,12 +249,7 @@ export default function Portafolio() {
                   Henry (Bootcamp full time 🧑‍🎓){" "}
                 </h4>
                 <p class="text-slate-300 mb-3">
-                  Mi Formacion mas destacada este año fue con Henry, en donde
-                  desarrolle mis habilidades de desarrollo web fullstack. Debido
-                  a la alta intensidad del Bootcamp y tambien porque estaba
-                  estudiando a la par el bootcamp de Oracle, logre adaptarme y
-                  aprender muchisimas tecnologias nuevas y desarrollar las
-                  skills mencionadas aqui en el 💼portafolio.
+                Mi Formación más destacada este año fue con Henry, en donde desarrolle mis habilidades de desarrollo web fullstack. Debido a la alta intensidad del Bootcamp y también porque estaba estudiando a la par el bootcamp de Oracle, logre adaptarme  y aprender muchísimas tecnologías nuevas y desarrollar las skills mencionadas aquí en el 💼 portafolio. 
                   <br />
                   Desarrolle 2 Proyectos con Henry, 🐺Pi-Dogs y
                   🚗🚕🚓🛺🚙Cars-Market
@@ -429,7 +410,7 @@ export default function Portafolio() {
                 >
                   {" "}
                   <button className={estilos.info}>
-                    👆visitar proyecto
+                    👆Visitar proyecto
                   </button>{" "}
                 </a>
               </div>
